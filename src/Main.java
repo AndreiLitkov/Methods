@@ -10,16 +10,16 @@ public class Main {
             System.out.println(year+ " год - не високосный год");
         }
     }
-    public static void whatProgramInstall( int clientOs , int clientDeviceYear){
+    public static void installingClientOs( int clientOs , int clientDeviceYear){
         if (clientOs==0){
             System.out.println("Установите версию приложения для iOS по ссылке.");
-        }else if(clientDeviceYear<2015){
-            System.out.println("Установите облегченную версию приложения для Android по ссылке");
-        }
-        if(clientOs==1){
+        }else if(clientOs==1){
             System.out.println("Установите версию приложения для Android по ссылке.");
-        }else if(clientDeviceYear<2015){
-            System.out.println("Установите облегченную версию приложения для iOS по ссылке.");
+        }
+        if(clientOs==0 && clientDeviceYear<2015){
+            System.out.println("Установите облегченную версию приложения для iOS по ссылке");
+        }else if(clientOs == 1 && clientDeviceYear<2015){
+            System.out.println("Установите облегченную версию приложения для Android по ссылке.");
         }
     }
     public static void deliveryDays(int distance){
@@ -37,18 +37,14 @@ public class Main {
 
         //Task 1
         System.out.println("Task 1");
-        int year = 1800;
-        isYearLeap(year);
+        isYearLeap(1800);
 
         //Task 2
         System.out.println("Task 2");
-        int clientOSNew = 0;
-        int clientDeviceYear = 2013;
-        whatProgramInstall(clientOSNew , clientDeviceYear);
+        installingClientOs(0 , 2013);
 
         //Task 3
         System.out.println("Task 3");
-        int deliveryDistance = 95;
-        deliveryDays(deliveryDistance);
+        deliveryDays(95);
     }
 }
